@@ -1,0 +1,446 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    transition: all 0.5s ease-in-out; /* Add global transition to body */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out; /* Add transition to header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header is on top of other content */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Add transition to nav links */
+}
+
+.nav-link:hover {
+    color: #ccc;
+    transform: translateY(-5px); /* Add hover effect to nav links */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow effect */
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, #333, #444);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    transition: background-position 0.5s ease-in-out; /* Add transition to hero background */
+    margin-top: 100px; /* Adjust margin to account for fixed header */
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: text-animate 2s ease-in-out forwards;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    animation: text-animate 2s ease-in-out forwards;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Add transition to button */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 0;
+    transition: all 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 0;
+    height: 0;
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: #444;
+    transform: translateY(-5px); /* Add hover effect to button */
+}
+
+.features {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease-in-out; /* Add transition to features section */
+}
+
+.features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out; /* Add transition to features list items */
+}
+
+.features li:hover {
+    transform: translateY(-5px); /* Add hover effect to features list items */
+}
+
+.features i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.database {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease-in-out; /* Add transition to database section */
+}
+
+.database table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.database th,.database td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.database th {
+    background-color: #f0f0f0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+    transition: background-color 0.5s ease-in-out; /* Add transition to footer */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; /* Add transition to footer links */
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+@keyframes text-animate {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+.nav-link {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden; /* Обрезание линии, которая выходит за пределы ссылки */
+    font-family: 'Montserrat', sans-serif; /* Использование шрифта Montserrat */
+    padding: 0.5em 1em; /* Поля вокруг текста ссылки */
+    margin-top: 10px; /* Расстояние между ссылками */
+    display: inline-block; /* Ссылки как блочные элементы */
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Начальное положение линии внутри ссылки */
+    width: 0%;
+    height: 2px;
+    background-color: #fff; /* Цвет линии */
+    transition: width 0.3s ease-in-out; /* Плавное изменение ширины линии */
+}
+
+.nav-link:hover::before {
+    width: 100%; /* Увеличение ширины линии до 100% при наведении */
+}
+
+.nav-link:not(:hover)::before {
+    width: 0%; /* Уменьшение ширины линии до 0% при убирании мыши */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, #333, #444);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.features {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+}
+
+.database {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.database table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.database th, .database td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+
+
+
+/* Global styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px; /* Отступ между элементами списка */
+    list-style-type: none;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em; /* Внутренний отступ кнопок */
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, #333, #444);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.features {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.features ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+}
+
+.database {
+    padding: 2em;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.database table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.database th, .database td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
